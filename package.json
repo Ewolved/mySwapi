@@ -1,0 +1,30 @@
+{
+  "name": "myswapi",
+  "version": "1.0.0",
+  "description": "Test technique Qualifio, appel vers une api plus traitement des datas en réponse",
+  "main": "index.js",
+  "dependencies": {
+    "axios": "^0.26.0",
+    "ejs": "^3.1.6",
+    "express": "^4.17.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ewolved/mySwapi.git"
+  },
+  "keywords": [
+    "swapi",
+    "qualifio",
+    "ewolved"
+  ],
+  "author": "Minet Maxime",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Ewolved/mySwapi/issues"
+  },
+  "homepage": "https://github.com/Ewolved/mySwapi#readme"
+}
