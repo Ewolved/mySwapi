@@ -1,0 +1,1 @@
+# mySwapi for qualifio
