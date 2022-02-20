@@ -20,17 +20,20 @@ app.get('/:id', async (req, res) => { // Async car traitement de données pour l
         const planets = [];
         const word = "mountain"; // variable pour vérifier si il y a des montagnes sur une planète
         const count = 0; 
-        for(let planet of resultFilm.planets) { 
-            const resultPlanet = await getPlanet(planet);
-            if(resultPlanet.terrain.includes())
-            planets.push(resultPlanet);
-            TotDiameter += await getDiameterOfPlanet(resultPlanet);
-        }
+        for(let planet of resultFilm.planets) {  // planet représente l'entrée vers l'api qui donne les détails de la planète
+            const resultPlanet = await getPlanet(planet); // ici on a les données brutes dans resultPlanet
+            if(resultPlanet.terrain.includes(word) && 
+               parseInt(resultPlanet.surface_water) > 0) {
+                planets.push({"name" : resultPlanet.name, "diameter" : resultPlanet.diameter}); // on recrée un objet json plus léger que le retour de l'api 
+                TotDiameter += await getDiameterOfPlanet(resultPlanet);                         // juste avec les données qui nous intéresse à forward à la vue
+               };
+            
+        };
         console.log('film data : ', film);
         console.log('Total diameter: ', TotDiameter);
         res.render('movie-results', {film : film, totDiameter : TotDiameter, planets : planets}); // On envoie les données traitées à la vue
         TotDiameter = 0; // On réinitialise à zero le total 
-    }
+    };
 });
 
 
@@ -76,4 +79,4 @@ function getDiameterOfPlanet(planet) {
         resolve(diameter);
         reject('error');
     })
-};
+}

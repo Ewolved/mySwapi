@@ -106,11 +106,15 @@
               <p id="subtitle"><%= film.title %></p>
               <br>
               <!-- And make it cheesy ! -->
-              <h1>Planètes :</h1>
+              <% if (planets.length < 1) { %>
+                <p id="subtitle"> There is no planet with mountains and with a water surface in this episode</p>
+              <% } else { %>
+              <p id="subtitle"> Planets with mountains and with a water surface</p>
               <% for(var i=0; i<planets.length; i++) { %>
                   <p>- <%= planets[i].name %> , diameter: <%= planets[i].diameter %></p>
               <% } %>
               <p>- Total diameter : <%= totDiameter %></p>
+              <% } %>
             </div>  
           </div>
           
