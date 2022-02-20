@@ -29,7 +29,7 @@ app.get('/:id', async (req, res) => { // Async car traitement de données pour l
         console.log('film data : ', film);
         console.log('Total diameter: ', TotDiameter);
         res.render('movie-results', {film : film, totDiameter : TotDiameter, planets : planets}); // On envoie les données traitées à la vue
-        TotDiameter = 0; // On réinitialise à zero le total
+        TotDiameter = 0; // On réinitialise à zero le total 
     }
 });
 
