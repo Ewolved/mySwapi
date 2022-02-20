@@ -40,6 +40,10 @@ app.get('/:id', async (req, res) => { // Async car traitement de données pour l
     };
 });
 
+app.get('*', (req, res) => {  // Gestion error 404 
+    res.render('error404');
+})
+
 app.listen(PORT, () => {
     console.log('The Central Intelligence Agency is listening to the port : ' + PORT);
 });
